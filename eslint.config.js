@@ -2,7 +2,7 @@ import busyboxEslintConfig, { globals } from '@busybox/eslint-config';
 
 export default [
   {
-    ignores: ['systems/', 'package-lock.json'],
+    ignores: ['package-lock.json'],
   },
   {
     languageOptions: {

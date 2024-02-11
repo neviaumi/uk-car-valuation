@@ -1,5 +1,0 @@
-{
-  "loader": "ts-node/esm",
-  "require": "ts-node/register",
-  "spec": ["src/**/*.spec.ts"]
-}
