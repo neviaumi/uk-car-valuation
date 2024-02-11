@@ -1,7 +1,9 @@
 {
   "author": "",
   "dependencies": {
-    "playwright": "1.41.2"
+    "playwright": "1.41.2",
+    "playwright-extra": "4.3.6",
+    "puppeteer-extra-plugin-stealth": "2.11.2"
   },
   "description": "",
   "devDependencies": {
