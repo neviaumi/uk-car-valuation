@@ -31,5 +31,5 @@ DevTools listening on ws://127.0.0.1:9222/devtools/browser/fd751190-fb93-4ce7-82
 Then you can run the following command to start the application:
 
 ```bash
-node ./src/index.js
+node ./src/index.js registrationPlate runningMiles
 ```
