@@ -12,4 +12,9 @@ export default [
     },
   },
   ...busyboxEslintConfig,
+  {
+    rules: {
+      'no-console': 'off',
+    },
+  },
 ];

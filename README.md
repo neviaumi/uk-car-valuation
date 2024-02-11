@@ -1,55 +1,35 @@
-# AWS Serverless Web App
+# UK car valuation
 
-![Working screenshot](./docs/working-screenshot.png)
+Simple command line tools to print used car mot history and valuation.
 
-The easy way to review would be following [Development Section](#development)
-and read the [Code Review Section](#code-review)
+## Installation
 
-## Code Review
-
-[Endpoint exposed](systems/api/schema.graphql)
-
-[Frontend code related to feature](systems/web/src/GameLibraryPage)
-
-[API code related to feature](systems/api/src/game-gallery)
-
-[Infrastructure setup](systems/infrastructure/src/index.ts)
-
-## Development
-
-Below script will set up the project and start the dev server.
-You can try change app code and see the result in real time.
-
-```sh
+```bash
 bash ./scripts/setup.sh
-bash ./scripts/dev.sh
-
-Open http://localhost:3000 for dev
 ```
 
-## Deployment
+## To Start
 
-Before you can do the deployment, you need to configure AWS CLI.
-[Follow here to configure AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
+You have to got Chrome running in debug mode. [Ref](https://dev.to/sonyarianto/how-to-use-playwright-with-externalexisting-chrome-4nf1)
 
-To complete follow below steps, you also need
-[Github CLI](https://cli.github.com/manual/)
-installed.
+You can get installation path by visiting: [Chrome version](chrome://version/)
 
-it optional because you always can merge back the release branch
-manually by create PR in GitHub.
+In my case it is: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
 
-Current it has only one deployment environment `production`.
-You can deploy it by running below script.
+Run following command to get Chrome running in debug mode:
 
-```sh
-bash
-# After that script it create the release branch
-# and setup all requested resource in AWS 
-# then deploy application to the resource.
-source ./scripts/deploy.sh production
-# You should merge back the release branch to base branch.
-gh pr create --title "Merge back v$RELEASE_VERSION" \
---body "Bump version to v$RELEASE_VERSION" \
---base $CURRENT_BRANCH --head "$RELEASE_BRANCH" 
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --remote-debugging-port=9222
+```
+
+You should see something like this:
+
+```text
+DevTools listening on ws://127.0.0.1:9222/devtools/browser/fd751190-fb93-4ce7-8268-85c28e0fe498
+````
+
+Then you can run the following command to start the application:
+
+```bash
+node ./src/index.js
 ```
